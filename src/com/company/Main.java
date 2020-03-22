@@ -8,17 +8,15 @@ public class Main {
         Map<String, String[]> dictionary = new HashMap<>();
         Map<String, String[]> newWords = new HashMap<>();
 
-        dictionary.put("Глупый", new String[]{"Немой", "Похой", "НЕнормальный", "Сумасшедший","Тупенький"});
+        dictionary.put("Глупый", new String[]{"Немой", "Плохой", "НЕнормальный", "Сумасшедший","Тупенький"});
         dictionary.put("Животное", new String[]{"Существо", "Млекопитающий", "Дикарь", "Зверек"});
         dictionary.put("Дом ", new String[]{"жилище", "помещение", "логово", "кров"});
         dictionary.put("Тратить", new String[]{"Одолжит", "Продать", "Дават в взаимы"});
-        dictionary.put("Я", new String[]{"Сам", "Себе", "Мой", "Моя"});
-        dictionary.put("Он", new String[]{"Она", "Она", "Они"});
         dictionary.put("Думать", new String[]{"Мыслить", "Задумыватся", "предпологать", "ощущать"});
         dictionary.put("Компьютер", new String[]{"Ноутбук", "Телефон", "Гаджет", "Планшет"});
         dictionary.put("Обычная Вода", new String[]{"Холодная вода", "Теплая вода", "Заморожонная вода", "Кипящая вода"});
         dictionary.put("Летать", new String[]{" Прыгать", " Скакать", "Бегать", "Двигаться"});
-        dictionary.put("Мечта", new String[]{"Сон", "Dream"});
+
 
         Set<String> keys = dictionary.keySet();
         Iterator iterator = keys.iterator();
@@ -27,6 +25,7 @@ public class Main {
             String[] values = dictionary.get(key);
             newWords.put(key, values);
             for (int i = 0; i <values.length ; i++) {
+
                 String StillKeys = values[i];
                 ArrayList<String> common = new ArrayList<>(values.length);
                 common.addAll(Arrays.asList(values));
@@ -38,7 +37,18 @@ public class Main {
                 newWords.put(StillKeys, StillValues);
             }
         }
-     boolean i=true;
+
+        for (Map.Entry<String,String[]>item:newWords.entrySet()
+             ){
+            System.out.println(" "+item.getKey()+" "+Arrays.toString((item.getValue())));
+        } {
+
+        }
+
+
+
+
+        boolean i=true;
         while (i) {
             System.out.println("Введите слово: ");
             Scanner scanner = new Scanner(System.in);
